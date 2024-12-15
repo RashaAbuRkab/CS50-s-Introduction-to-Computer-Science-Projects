@@ -1,0 +1,60 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.header {
+    background-color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.container {
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+#mc-result, #fr-result {
+    font-weight: bold;
+    margin-top: 10px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function checkAnswers() {
+                // Part 1: Check multiple choice answer
+                const q1 = document.querySelector('input[name="q1"]:checked');
+                const q1Answer = q1 ? q1.value : null;
+
+                // Part 2: Check free response answer
+                const q2Answer = document.getElementById("q2").value.trim().toLowerCase();
+
+                // Correct answers
+                let score = 0;
+                const correctQ1 = "b"; // Example correct answer for multiple choice
+                const correctQ2 = "earth"; // Example correct answer for free response
+
+                // Check answers
+                if (q1Answer === correctQ1) {
+                    score++;
+                }
+
+                if (q2Answer === correctQ2) {
+                    score++;
+                }
+
+                alert(`You scored ${score}/2`);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+                <hr>
+                <p>Which planet is known as the Red Planet?</p>
+                <label><input type="radio" name="q1" value="a"> Venus</label><br>
+                <label><input type="radio" name="q1" value="b"> Mars</label><br>
+                <label><input type="radio" name="q1" value="c"> Jupiter</label><br>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <p>Which planet is home to humans?</p>
+                <input type="text" id="q2">
+            </div>
+
+            <button onclick="checkAnswers()">Submit</button>
+        </div>
+    </body>
+</html>
