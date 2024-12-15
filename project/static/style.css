@@ -1,0 +1,199 @@
+body {
+    position: relative; /* Add this */
+    background: linear-gradient(to right, #ec5fff21, #7bbffe);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Main container */
+.main-container {
+    border: 3px solid #d9534f;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Header Box */
+.header-box {
+    border: 3px solid #5bc0de;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    margin: 0;
+    color: #d9534f;
+}
+
+/* Task Input Box */
+.task-input-box {
+    border: 2px solid #f0ad4e;
+    padding: 15px;
+    background-color: #fff3cd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.form-control {
+    padding: 10px;
+    width: calc(100% - 100px);
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.btn-add-task {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-add-task:hover {
+    background-color: #4cae4c;
+}
+
+/* Task Section */
+.task-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* In Progress and Completed Task Boxes */
+.in-progress, .completed {
+    width: 48%;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid #ced4da;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.list-group-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-group-item.completed {
+    text-decoration: line-through;
+    background-color: #d4edda;
+    color: #28a745;
+    animation: happy-dance 1s ease-in-out;
+}
+
+@keyframes happy-dance {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Cloud Styles */
+.cloud {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Different sizes for clouds */
+.cloud.one {
+    width: 150px;
+    height: 60px;
+    left: 0;
+    top: 50px;
+}
+
+.cloud.one::before {
+    width: 80px;
+    height: 80px;
+    left: 40px;
+    top: -20px;
+}
+
+.cloud.one::after {
+    width: 100px;
+    height: 100px;
+    left: 100px;
+    top: -10px;
+}
+
+.cloud.two {
+    width: 180px;
+    height: 70px;
+    right: 0;
+    bottom: 20px;
+}
+
+.cloud.two::before {
+    width: 90px;
+    height: 90px;
+    left: 30px;
+    top: -15px;
+}
+
+.cloud.two::after {
+    width: 120px;
+    height: 120px;
+    left: 90px;
+    top: -10px;
+}

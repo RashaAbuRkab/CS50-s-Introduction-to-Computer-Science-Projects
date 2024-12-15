@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div id="message" class="alert alert-success" style="display:none;"></div>
+
+    <script>
+        // Display the funny message if it's available
+        const message = "{{ message if message is not none else '' | tojson | safe }}"; // Pass the message from Flask
+        if (message) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerText = message;
+            messageDiv.style.display = 'block';
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 3000); // Hide after 3 seconds
+        }
+    </script>
+
+    <form method="POST" action="/add">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="content" placeholder="Enter a task..." required>
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Add Task</button>
+            </div>
+        </div>
+    </form>
+
+    <ul class="list-group">
+        {% for task in tasks %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span {% if task.completed %}style="text-decoration: line-through;"{% endif %}>{{ task.content }}</span>
+                <div>
+                    <a href="/complete/{{ task.id }}" class="btn btn-success btn-sm">✓</a>
+                    <a href="/delete/{{ task.id }}" class="btn btn-danger btn-sm">X</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

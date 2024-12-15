@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="cloud one"></div>
+    <div class="cloud two"></div>
+
+    <div class="main-container">
+        <div class="header-box">
+            <h1>To-Do List📝</h1>
+        </div>
+
+        <div class="task-input-box">
+            <form method="POST" action="/add">
+                <label for="content" class="input-label">Enter Task:</label>
+                <input type="text" class="form-control" name="content" placeholder="Enter a task..." required>
+                <button type="submit" class="btn btn-add-task">Add Task</button>
+            </form>
+        </div>
+
+        <div class="task-section">
+            <div class="in-progress">
+                <h2>In Progress 🕜</h2>
+                <ul class="list-group">
+                    {% for task in tasks %}
+                        {% if not task.completed %}
+                        <li class="list-group-item">
+                            {{ task.content }}
+                            <a href="/complete/{{ task.id }}" class="btn btn-success btn-sm">✓</a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="completed">
+                <h2>Completed 👏</h2>
+                <ul class="list-group">
+                    {% for task in tasks %}
+                        {% if task.completed %}
+                        <li class="list-group-item completed">
+                            {{ task.content }}
+                            <a href="/delete/{{ task.id }}" class="btn btn-danger btn-sm">X</a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
