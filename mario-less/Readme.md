@@ -1,5 +1,5 @@
 # Mario  
-![image](https://github.com/user-attachments/assets/14a7562a-3880-4052-8bb9-4ce7eea91eff)
+![image](https://github.com/user-attachments/assets/a30cf963-842d-449a-908e-6ac5017cc5b6)
 
 ## Problem to Solve  
 In **Nintendo’s Super Mario Bros.**, toward the end of **World 1-1**, Mario must ascend a **right-aligned pyramid** of bricks.  
